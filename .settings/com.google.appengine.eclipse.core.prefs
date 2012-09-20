@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+
+gaeDatanucleusVersion=v2
+gaeHrdEnabled=true
+gaeIsEclipseDefaultInstPath=true

@@ -1,0 +1,25 @@
+<div class="hero-unit">
+    <h1>Listado de Noticias</h1>
+</div>
+<a class="btn btn-primary btn-large"
+    href="/administracion/noticias/nuevo">Nueva Noticia</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th >Titulo</th>
+                <th >Fecha</th>
+				<th ></th>
+            </tr>
+        </thead>
+        <tbody>
+            #foreach($noticia in $noticias)
+                <tr>
+                    <td>
+                        <a href="/administracion/noticias/editar/$noticia.id">$noticia.titulo</a>
+                    </td>
+                    <td>$noticia.fechaPublicacion</td>
+					<td><a href="/administracion/noticias/eliminar/$noticia.id" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+            #end
+        </tbody>
+    </table>

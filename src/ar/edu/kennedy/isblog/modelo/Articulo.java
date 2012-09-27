@@ -27,6 +27,12 @@ public class Articulo {
 	private Text cuerpo;
 	
 	@Persistent
+	private String ImagenGrande;
+	
+	@Persistent
+	private String ImagenChica;
+	
+	@Persistent
 	private Date fechaPublicacion;
 
 	public Articulo(String titulo, String subtitulo, String cuerpo) {
@@ -75,6 +81,22 @@ public class Articulo {
 
 	public Long getId() {
 		return id;
+	}
+
+	public String getImagenGrande() {
+		return ImagenGrande;
+	}
+
+	public void setImagenGrande(String imagenGrande) {
+		ImagenGrande = imagenGrande;
+	}
+
+	public String getImagenChica() {
+		return ImagenChica;
+	}
+
+	public void setImagenChica(String imagenChica) {
+		ImagenChica = imagenChica;
 	}
 	
 	

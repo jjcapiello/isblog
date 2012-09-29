@@ -28,7 +28,6 @@ public class NoticiasControlador {
 	
 	@RequestMapping("/noticias")
     public String inicio(Model modelo) {
-            
             modelo.addAttribute("menuSeleccionado", "noticias");
             
             return "implementar";

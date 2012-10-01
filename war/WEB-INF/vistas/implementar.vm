@@ -1,4 +1,54 @@
-<div class="hero-unit">
-    <h1>Implementar</h1>
-    <p>Falta hacer la vista y completar el controlador</p>
-</div>
+      <div class="hero-unit">
+        <h1>Material de Apoyo</h1>
+        
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span12">
+          <h2>Programa</h2>
+         <p><a class="btn" href="#">Ver Detalle &raquo;</a></p>
+        
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="span12">
+          <h2>Bibliografia</h2>
+          <p><a class="btn" href="#">Ver Detalle &raquo;</a></p>
+          
+       </div>
+       </div>
+        
+       
+        <div class="row">
+        <div class="span12">
+          <h2>Informacion</h2>
+          <p><a class="btn" href="#">Ver Detalle &raquo;</a></p>
+        </div>
+        </div>
+        
+         <div class="row">
+        <div class="span12">
+          <h2>Noticias </h2>
+          <p><a class="btn" href="#">Ver Detalle &raquo;</a></p>
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="span12">
+          <h2>Notas </h2>
+          <p><a class="btn" href="#">Ver Detalle &raquo;</a></p>
+        </div>
+        </div>
+          
+      </div>
+
+      
+    </div> <!-- /container -->
+
+
+     
+
+</body>
+</html>

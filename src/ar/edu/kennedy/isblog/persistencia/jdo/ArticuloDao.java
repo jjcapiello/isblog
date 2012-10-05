@@ -27,6 +27,10 @@ public class ArticuloDao extends BaseDao<Articulo> implements IArticuloDao {
 		}
 	}
 	
+	public int cantidad(){
+		return listar().size();
+	}
+	
 	@Override
 	public Articulo masReciente() {
 		SimpleQuery query = new SimpleQuery(Articulo.class);

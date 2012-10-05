@@ -1,18 +1,21 @@
 package ar.edu.kennedy.isblog.controlador;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MateriaControlador {
 
 	@RequestMapping("/materia")
-    public String inicio(Model modelo) {
+    public ModelAndView inicio() {
             
-            modelo.addAttribute("menuSeleccionado", "materia");
-            
-            return "implementar";
+ModelAndView modelo = new ModelAndView();
+		
+        modelo.addObject("menuSeleccionado", "materia");
+        modelo.setViewName("materia/listar");
+        
+        return modelo;
     }
 	
 }

@@ -12,7 +12,7 @@ public class MateriaControlador {
             
             modelo.addAttribute("menuSeleccionado", "materia");
             
-            return "Apoyo";
+            return "materia/listar";
     }
 	
 	

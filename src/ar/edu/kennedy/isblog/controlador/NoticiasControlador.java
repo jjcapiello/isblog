@@ -23,16 +23,18 @@ public class NoticiasControlador {
 	
 	@Autowired
     private ArticulosServicio articuloServicio;
-	
-	
-	
+
 	@RequestMapping("/noticias")
-    public String inicio(Model modelo) {
-            
-            modelo.addAttribute("menuSeleccionado", "noticias");
-            
-            return "implementar";
-    }
+	public ModelAndView inicio() {
+
+		ModelAndView modelo = new ModelAndView();
+
+		modelo.addObject("menuSeleccionado", "noticias");
+
+		modelo.setViewName("administracion/noticias/listar");
+
+		return modelo;
+	}
 	
 	
 	/*Adminsitracion de Noticias*/
@@ -42,7 +44,7 @@ public class NoticiasControlador {
 
 		ModelAndView modelo = new ModelAndView();
 		
-		modelo.addObject("noticias", articuloServicio.masRecientes(10));
+		modelo.addObject("noticias", articuloServicio.masRecientes(4));
 		
         modelo.addObject("menuSeleccionado", "administracion");
         modelo.setViewName("administracion/noticias/listar");

@@ -3,17 +3,13 @@ package ar.edu.kennedy.isblog.controlador;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.kennedy.isblog.modelo.Articulo;
@@ -29,24 +25,14 @@ public class NoticiasControlador {
     private ArticulosServicio articuloServicio;
 	
 	
+	
 	@RequestMapping("/noticias")
-	public ModelAndView inicio(HttpServletRequest request, HttpServletResponse response) {
-		
-		String page = request.getParameter("pagina");
-		// Si es la primera vez..
-		if(page == null) {
-			
-		}
-		PagedListHolder<Articulo> noticias = new PagedListHolder<Articulo>(articuloServicio.todos());
-		noticias.setPageSize(10);
-		ModelAndView modelo = new ModelAndView();
-		modelo.addObject("noticias", articuloServicio.masRecientes(4));
-
-		modelo.addObject("menuSeleccionado", "noticias");
-		modelo.setViewName("noticias/listar");
-
-		return modelo;
-	}
+    public String inicio(Model modelo) {
+            
+            modelo.addAttribute("menuSeleccionado", "noticias");
+            
+            return "implementar";
+    }
 	
 	
 	/*Adminsitracion de Noticias*/
@@ -56,7 +42,7 @@ public class NoticiasControlador {
 
 		ModelAndView modelo = new ModelAndView();
 		
-		modelo.addObject("noticias", articuloServicio.masRecientes(4));
+		modelo.addObject("noticias", articuloServicio.masRecientes(10));
 		
         modelo.addObject("menuSeleccionado", "administracion");
         modelo.setViewName("administracion/noticias/listar");

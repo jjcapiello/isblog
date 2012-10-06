@@ -3,6 +3,9 @@ package ar.edu.kennedy.isblog.controlador;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -26,13 +29,17 @@ public class NoticiasControlador {
     private ArticulosServicio articuloServicio;
 	
 	
-	@RequestMapping("/noticias/pagina/{pagina}")
-	public ModelAndView inicio(@PathVariable String pagina) {
+	@RequestMapping("/noticias")
+	public ModelAndView inicio(HttpServletRequest request, HttpServletResponse response) {
 		
-		ModelAndView modelo = new ModelAndView();
-
+		String page = request.getParameter("pagina");
+		// Si es la primera vez..
+		if(page == null) {
+			
+		}
 		PagedListHolder<Articulo> noticias = new PagedListHolder<Articulo>(articuloServicio.todos());
 		noticias.setPageSize(10);
+		ModelAndView modelo = new ModelAndView();
 		modelo.addObject("noticias", articuloServicio.masRecientes(4));
 
 		modelo.addObject("menuSeleccionado", "noticias");

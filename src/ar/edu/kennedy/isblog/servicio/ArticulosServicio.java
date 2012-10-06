@@ -3,8 +3,6 @@ package ar.edu.kennedy.isblog.servicio;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ar.edu.kennedy.isblog.modelo.Articulo;
 import ar.edu.kennedy.isblog.persistencia.IArticuloDao;

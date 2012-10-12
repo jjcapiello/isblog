@@ -1,5 +1,6 @@
 package ar.edu.kennedy.isblog.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
@@ -11,7 +12,12 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
-public class Articulo {
+public class Articulo implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 427978317103280765L;
 
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)

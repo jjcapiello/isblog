@@ -3,9 +3,12 @@ package ar.edu.kennedy.isblog.controlador;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,17 +28,30 @@ public class NoticiasControlador {
     private ArticulosServicio articuloServicio;
 
 	@RequestMapping("/noticias")
-	public ModelAndView inicio() {
+	public ModelAndView noticias() {
 
 		ModelAndView modelo = new ModelAndView();
-
+		
+		modelo.addObject("noticias", articuloServicio.todos());
+		
 		modelo.addObject("menuSeleccionado", "noticias");
-
-		modelo.setViewName("administracion/noticias/listar");
+        modelo.setViewName("noticias/listar");
 
 		return modelo;
 	}
 	
+	@RequestMapping(value="/noticias/{id}", method=RequestMethod.GET)
+    public ModelAndView ver(@PathVariable String id) {
+                         
+		ModelAndView modelo = new ModelAndView();
+		
+		modelo.addObject("noticia", articuloServicio.obtenerPorId(Long.valueOf(id)));
+		
+        modelo.addObject("menuSeleccionado", "noticias");
+        modelo.setViewName("noticias/ver");
+		
+        return modelo;
+    }
 	
 	/*Adminsitracion de Noticias*/
 	
@@ -44,7 +60,7 @@ public class NoticiasControlador {
 
 		ModelAndView modelo = new ModelAndView();
 		
-		modelo.addObject("noticias", articuloServicio.masRecientes(4));
+		modelo.addObject("noticias", articuloServicio.todos());
 		
         modelo.addObject("menuSeleccionado", "administracion");
         modelo.setViewName("administracion/noticias/listar");

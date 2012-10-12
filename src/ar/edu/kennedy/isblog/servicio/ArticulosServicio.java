@@ -18,6 +18,9 @@ public class ArticulosServicio {
 		articuloDao.guardar(articulo);
 	}
 	
+	public Articulo obtenerPorId(Long id){
+		return articuloDao.obtenerPorId(id);
+	}
 	
 	public List<Articulo> masRecientes(int cantidad){
 		return articuloDao.masRecientes(cantidad);
@@ -27,4 +30,7 @@ public class ArticulosServicio {
 		articuloDao.eliminar(id);
 	}
 	
+	public List<Articulo> todos(){
+		return articuloDao.listar();
+	}
 }

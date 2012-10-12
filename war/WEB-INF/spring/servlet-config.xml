@@ -23,34 +23,10 @@
 		for templates. Optionally, a properties file can be specified for more control 
 		over the Velocity environment, but the defaults are pretty sane for file 
 		based template loading. -->
-	<bean id="velocityConfig"
-		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-		<property name="resourceLoaderPath" value="/WEB-INF/vistas/" />
-	</bean>
-
-	<!-- View resolvers can also be configured with ResourceBundles or XML files. 
-		If you need different view resolving based on Locale, you have to use the 
-		resource bundle resolver. -->
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
-		<property name="layoutUrl" value="_layout/main.vm" />
-		<property name="cache" value="true" />
-		<property name="prefix" value="" />
-		<property name="suffix" value=".vm" />
-		<property name="exposeSpringMacroHelpers" value="true" />
-		<property name="contentType" value="text/html; charset=UTF-8" />
-
-	</bean>
-
 	<bean
-		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-		<property name="mediaTypes">
-			<map>
-				<entry key="json" value="application/json" />
-				<entry key="xml" value="text/xml" />
-				<entry key="html" value="text/html" />
-			</map>
-		</property>
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/vistas/" />
+		<property name="suffix" value=".jsp" />
 	</bean>
 
 </beans>

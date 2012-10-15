@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IBaseDao<T> {
 
-	void guardar(T modelo);
+	T guardar(T modelo);
 	
 	void eliminar(T modelo);
 	

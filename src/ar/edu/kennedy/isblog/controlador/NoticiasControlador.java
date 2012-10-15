@@ -71,10 +71,32 @@ public class NoticiasControlador {
 	@RequestMapping(value="/administracion/noticias/nuevo", method=RequestMethod.GET)
     public ModelAndView nuevo() {
            
-		log.info("Nueva Noticia");
-		ModelAndView modelo = new ModelAndView("administracion/noticias/nuevo", "articulo", new Articulo());
+		log.info("Nuevo articulo");
+		
+		// creo articulo
+		Articulo nuevoArticulo = new Articulo("Nuevo Articulo", "", "");
+		nuevoArticulo.setFechaPublicacion(Calendar.getInstance().getTime());
+		nuevoArticulo = articuloServicio.guardar(nuevoArticulo);
+		
+		log.info(String.format("Creando articulo: %s", nuevoArticulo.getId()));
+		
+        return new ModelAndView("redirect:/administracion/noticias/editar/"+nuevoArticulo.getId());
+    }
+	
+	@RequestMapping(value="/administracion/noticias/editar/{id}", method=RequestMethod.GET)
+    public ModelAndView editar(@PathVariable String id) {
+                         
+		log.info(String.format("Cargado articulo: %s", id));
+		
+		Articulo articulo = articuloServicio.obtenerPorId(Long.valueOf(id));
+		
+		ModelAndView modelo = new ModelAndView();
+	
+		modelo.addObject("articulo", articulo);
 		
         modelo.addObject("menuSeleccionado", "administracion");
+        
+        modelo.setViewName("administracion/noticias/editar");
         
         return modelo;
     }

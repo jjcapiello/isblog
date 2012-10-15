@@ -14,8 +14,8 @@ public class ArticulosServicio {
 	@Autowired
 	private IArticuloDao articuloDao;
 	
-	public void guardar(Articulo articulo){
-		articuloDao.guardar(articulo);
+	public Articulo guardar(Articulo articulo){
+		return articuloDao.guardar(articulo);
 	}
 	
 	public Articulo obtenerPorId(Long id){

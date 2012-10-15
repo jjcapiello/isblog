@@ -26,11 +26,13 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
 	  this.clase = clase;
 	 }
 	
+	
+	
 	@Override
-	public void guardar(T modelo) {
+	public T guardar(T modelo) {
 		PersistenceManager pm = persistenceManagerFactoryName.getPersistenceManager();
 		try {
-			pm.makePersistent(modelo);
+			return pm.makePersistent(modelo);
 		} finally {
 			pm.close();
 		}

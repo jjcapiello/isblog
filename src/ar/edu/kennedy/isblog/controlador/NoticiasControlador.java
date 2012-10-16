@@ -3,11 +3,7 @@ package ar.edu.kennedy.isblog.controlador;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -93,7 +89,7 @@ public class NoticiasControlador {
 		ModelAndView modelo = new ModelAndView();
 	
 		modelo.addObject("articulo", articulo);
-		
+
         modelo.addObject("menuSeleccionado", "administracion");
         
         modelo.setViewName("administracion/noticias/editar");
@@ -104,11 +100,9 @@ public class NoticiasControlador {
 	@RequestMapping(value="/administracion/noticias/guardar", method=RequestMethod.POST)
     public ModelAndView guardar(@ModelAttribute Articulo articulo) {
                          
-		log.info(String.format("Guaradando: %s", articulo.getTitulo()));
-		Articulo nuevoArticulo = new Articulo(articulo.getTitulo(), articulo.getSubtitulo(), articulo.getCuerpo().toString());
-		nuevoArticulo.setFechaPublicacion(Calendar.getInstance().getTime());
+		log.info(String.format("Guaradando: %s", articulo.getId()));
 
-		articuloServicio.guardar(nuevoArticulo);
+		articuloServicio.guardar(articulo);
 		
         return new ModelAndView("redirect:/administracion/noticias");
     }

@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.kennedy.isblog.modelo.Articulo;
+import ar.edu.kennedy.isblog.modelo.Comentario;
 import ar.edu.kennedy.isblog.persistencia.IArticuloDao;
+import ar.edu.kennedy.isblog.persistencia.IComentarioDao;
 
 @Service
 public class ArticulosServicio {
 	
 	@Autowired
 	private IArticuloDao articuloDao;
+	
+	@Autowired
+	private IComentarioDao comentarioDao;
 	
 	public Articulo guardar(Articulo articulo){
 		return articuloDao.guardar(articulo);
@@ -32,5 +37,9 @@ public class ArticulosServicio {
 	
 	public List<Articulo> todos(){
 		return articuloDao.listar();
+	}
+	
+	public List<Comentario> comentariosPorArticulo(Long articuloId){
+		return comentarioDao.comentariosPorArticulo(articuloId);
 	}
 }

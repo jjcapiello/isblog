@@ -3,5 +3,9 @@
 
 <h1><c:out value="${noticia.titulo}" /></h1>
 <c:out value="${noticia.fechaPublicacion}" />
-<h2><c:out value="${noticia.subtitulo}" /></h2>
-<p><c:out value="${noticia.cuerpo}" /></p>
+<p class="lead">
+<c:out value="${noticia.subtitulo}" />
+</p>
+<p>
+<c:out value="${noticia.cuerpo}" />
+</p>

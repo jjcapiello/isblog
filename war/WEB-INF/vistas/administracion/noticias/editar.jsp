@@ -10,27 +10,26 @@
 	id="formularioArticulo">
 	
 	<form:hidden path="id"/>
-	<form:hidden path="fechaPublicacion"/>
 	
 	<form:label path="titulo">Titulo</form:label>
-	<form:input path="titulo" cssClass="input-large" />
+	<form:input path="titulo" cssClass="input-xxlarge" />
 	
 	<form:label path="subtitulo">Subtitulo</form:label>
-	<form:textarea path="subtitulo" />
+	<form:textarea path="subtitulo" cssClass="input-xxlarge" rows="4" />
 	
 	<form:label path="cuerpo">Cuerpo</form:label>
-	<form:textarea path="cuerpo" />
+	<form:textarea path="cuerpo" rows="5" cols="100"/>
 	
-	<div class="actions">
-		<input type="submit" value="Guardar" class="btn primary"> o <a
-			href="/administracion/noticias" class="btn">Cancelar</a>
+	<div class="form-actions">
+		<input type="submit" value="Guardar" class="btn btn-primary"> 
+		<a href="/administracion/noticias" class="btn">Cancelar</a>
 	</div>
 	
 </form:form>
 
 <% 
 	CKEditorConfig settings = new CKEditorConfig();
-	settings.addConfigValue("width","500");
+	//settings.addConfigValue("width","500");
 %>
 
 <ckeditor:replace replace="cuerpo" basePath="/recursos/ckeditor/" config="<%=settings %>" />

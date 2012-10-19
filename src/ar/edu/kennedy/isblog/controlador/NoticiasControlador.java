@@ -43,6 +43,8 @@ public class NoticiasControlador {
 		
 		modelo.addObject("noticia", articuloServicio.obtenerPorId(Long.valueOf(id)));
 		
+		modelo.addObject("comentarios", articuloServicio.comentariosPorArticulo(Long.valueOf(id)));
+		
         modelo.addObject("menuSeleccionado", "noticias");
         modelo.setViewName("noticias/ver");
 		
@@ -69,7 +71,7 @@ public class NoticiasControlador {
            
 		log.info("Nuevo articulo");
 		
-		// creo articulo
+		// creo articulo	
 		Articulo nuevoArticulo = new Articulo("Nuevo Articulo", "", "");
 		nuevoArticulo.setFechaPublicacion(Calendar.getInstance().getTime());
 		nuevoArticulo = articuloServicio.guardar(nuevoArticulo);
@@ -85,7 +87,7 @@ public class NoticiasControlador {
 		log.info(String.format("Cargado articulo: %s", id));
 		
 		Articulo articulo = articuloServicio.obtenerPorId(Long.valueOf(id));
-		
+
 		ModelAndView modelo = new ModelAndView();
 	
 		modelo.addObject("articulo", articulo);
@@ -102,6 +104,8 @@ public class NoticiasControlador {
                          
 		log.info(String.format("Guaradando: %s", articulo.getId()));
 
+		articulo.setFechaModificacion(Calendar.getInstance().getTime());
+		
 		articuloServicio.guardar(articulo);
 		
         return new ModelAndView("redirect:/administracion/noticias");

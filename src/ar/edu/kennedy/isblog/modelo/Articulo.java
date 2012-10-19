@@ -1,8 +1,6 @@
 package ar.edu.kennedy.isblog.modelo;
 
-import java.io.Serializable;
 import java.util.Date;
-
 import javax.jdo.annotations.IdGeneratorStrategy;
 import com.google.appengine.api.datastore.Text;
 
@@ -12,12 +10,7 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
-public class Articulo implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 427978317103280765L;
+public class Articulo {
 
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -33,24 +26,29 @@ public class Articulo implements Serializable{
 	private Text cuerpo;
 	
 	@Persistent
-	private String ImagenGrande;
+	private String imagenGrande;
 	
 	@Persistent
-	private String ImagenChica;
+	private String imagenChica;
 	
 	@Persistent
 	private Date fechaPublicacion;
+	
+	@Persistent
+	private Date fechaModificacion;
 
 	public Articulo(String titulo, String subtitulo, String cuerpo) {
 		super();
 		this.titulo = titulo;
 		this.subtitulo = subtitulo;
 		this.cuerpo = new Text(cuerpo);
-		//this.fechaPublicacion = Calendar.getInstance().getTime();
+		fechaPublicacion = new Date();
+		fechaModificacion = new Date();
 	}
 
 	public Articulo() {
-		// TODO Auto-generated constructor stub
+		fechaPublicacion = new Date();
+		fechaModificacion = new Date();
 	}
 
 	public String getTitulo() {
@@ -69,12 +67,12 @@ public class Articulo implements Serializable{
 		this.subtitulo = subtitulo;
 	}
 
-	public Text getCuerpo() {
-		return cuerpo;
+	public String getCuerpo() {
+		return cuerpo.toString();
 	}
 
-	public void setCuerpo(Text cuerpo) {
-		this.cuerpo = cuerpo;
+	public void setCuerpo(String cuerpo) {
+		this.cuerpo = new Text(cuerpo);
 	}
 
 	public Date getFechaPublicacion() {
@@ -85,24 +83,36 @@ public class Articulo implements Serializable{
 		this.fechaPublicacion = fechaPublicacion;
 	}
 
+	public Date getFechaModificacion() {
+		return fechaModificacion;
+	}
+
+	public void setFechaModificacion(Date fechaModificacion) {
+		this.fechaModificacion = fechaModificacion;
+	}
+
 	public Long getId() {
 		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getImagenGrande() {
-		return ImagenGrande;
+		return imagenGrande;
 	}
 
 	public void setImagenGrande(String imagenGrande) {
-		ImagenGrande = imagenGrande;
+		this.imagenGrande = imagenGrande;
 	}
 
 	public String getImagenChica() {
-		return ImagenChica;
+		return imagenChica;
 	}
 
 	public void setImagenChica(String imagenChica) {
-		ImagenChica = imagenChica;
+		this.imagenChica = imagenChica;
 	}
 	
 	

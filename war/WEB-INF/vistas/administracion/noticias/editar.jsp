@@ -18,7 +18,7 @@
 	<form:textarea path="subtitulo" cssClass="input-xxlarge" rows="4" />
 	
 	<form:label path="cuerpo">Cuerpo</form:label>
-	<form:textarea path="cuerpo" rows="5" cols="100"/>
+	<form:textarea path="cuerpo"/>
 	
 	<div class="form-actions">
 		<input type="submit" value="Guardar" class="btn btn-primary"> 

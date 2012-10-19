@@ -6,6 +6,5 @@
 <p class="lead">
 <c:out value="${noticia.subtitulo}" />
 </p>
-<p>
-<c:out value="${noticia.cuerpo}" />
-</p>
+
+${noticia.cuerpo}

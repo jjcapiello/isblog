@@ -2,8 +2,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://ckeditor.com" prefix="ckeditor" %>
 
-<div class="hero-unit">
-	<h1>Noticia</h1>
+<div class="page-header">
+  <h1>Noticia</h1>
 </div>
 
 <form:form modelAttribute="articulo" action="/administracion/noticias/guardar" method="POST"

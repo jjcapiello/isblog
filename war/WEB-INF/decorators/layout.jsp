@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Investigacion de Sistemas</title>
 
@@ -14,24 +14,23 @@
 	href="/recursos/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="/recursos/bootstrap/css/bootstrap-responsive.min.css" />
-<style type="text/css">
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-}
-</style>
+<link rel="stylesheet" type="text/css"
+	href="/recursos/estilos.css" />
+
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container-fluid">
-				<c:import url="/WEB-INF/vistas/tags/menu_superior.jsp" />
-			</div>
+				<div class="container">
+					<c:import url="/WEB-INF/vistas/tags/menu_superior.jsp" />
+				</div>
 		</div>
 	</div>
 
 	<div class="container">
-		<decorator:body />
+		<div class="contenedor">
+			<decorator:body />
+		</div>
 		<footer>
 			<p>&copy; Investigacion de Sistemas 2012, Universidad Argentina
 				John F. Kennedy</p>

@@ -67,12 +67,12 @@ public class Articulo {
 		this.subtitulo = subtitulo;
 	}
 
-	public Text getCuerpo() {
-		return cuerpo;
+	public String getCuerpo() {
+		return cuerpo.getValue();
 	}
 
-	public void setCuerpo(Text cuerpo) {
-		this.cuerpo = cuerpo;
+	public void setCuerpo(String cuerpo) {
+		this.cuerpo = new Text(cuerpo);
 	}
 
 	public Date getFechaPublicacion() {

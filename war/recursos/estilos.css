@@ -1,0 +1,21 @@
+html, body {
+    background-color: #fff;
+}
+
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.container > footer p {
+    text-align: center;
+}
+
+.container {
+    width: 820px; 
+}
+
+.contenedor {
+    position: relative;
+    min-height: 500px;
+} 

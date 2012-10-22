@@ -6,7 +6,7 @@
   <h1>Noticia</h1>
 </div>
 
-<form:form modelAttribute="articulo" action="/administracion/noticias/guardar" method="POST"
+<form:form modelAttribute="articulo" action="/administracion/noticias/crear" method="POST"
 	id="formularioArticulo">
 	
 	<form:hidden path="id"/>

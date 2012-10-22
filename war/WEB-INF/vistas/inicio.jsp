@@ -14,9 +14,9 @@
 		<c:choose>
 			<c:when test="${contador == 1}">
 				<div class="hero-unit">
-					<h2>
+					<h1>
 						<c:out value="${noticia.titulo}" />
-					</h2>
+					</h1>
 					<c:out value="${noticia.fechaPublicacion}" />
 					<p>
 						<c:out value="${noticia.subtitulo}" />

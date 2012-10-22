@@ -5,13 +5,20 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import com.google.appengine.api.datastore.Text;
 
 import javax.jdo.annotations.IdentityType;
+import javax.jdo.annotations.NotPersistent;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class Articulo {
+	
+	@NotPersistent
+	public static final int NOTICIA = 1;
 
+	@NotPersistent
+	public static final int PROGRAMA = 2;
+	
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Long id;
@@ -36,19 +43,22 @@ public class Articulo {
 	
 	@Persistent
 	private Date fechaModificacion;
+	
+	@Persistent
+	private int tipoArticulo;
 
-	public Articulo(String titulo, String subtitulo, String cuerpo) {
+	@Persistent
+	private boolean publico;
+	
+	public Articulo(int tipoArticulo) {
 		super();
-		this.titulo = titulo;
-		this.subtitulo = subtitulo;
-		this.cuerpo = new Text(cuerpo);
-		fechaPublicacion = new Date();
-		fechaModificacion = new Date();
-	}
-
-	public Articulo() {
-		fechaPublicacion = new Date();
-		fechaModificacion = new Date();
+		this.titulo = "";
+		this.subtitulo = "";
+		this.cuerpo = new Text("");
+		this.fechaPublicacion = new Date();
+		this.fechaModificacion = new Date();
+		this.tipoArticulo = tipoArticulo;
+		this.publico = false;
 	}
 
 	public String getTitulo() {
@@ -113,6 +123,22 @@ public class Articulo {
 
 	public void setImagenChica(String imagenChica) {
 		this.imagenChica = imagenChica;
+	}
+
+	public int getTipoArticulo() {
+		return tipoArticulo;
+	}
+
+	public void setTipoArticulo(int tipoArticulo) {
+		this.tipoArticulo = tipoArticulo;
+	}
+
+	public boolean isPublico() {
+		return publico;
+	}
+
+	public void setPublico(boolean publico) {
+		this.publico = publico;
 	}
 	
 	

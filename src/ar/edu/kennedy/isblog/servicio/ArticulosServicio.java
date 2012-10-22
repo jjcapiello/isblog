@@ -27,16 +27,16 @@ public class ArticulosServicio {
 		return articuloDao.obtenerPorId(id);
 	}
 	
-	public List<Articulo> masRecientes(int cantidad){
-		return articuloDao.masRecientes(cantidad);
+	public List<Articulo> noticiasMasRecientes(int cantidad){
+		return articuloDao.noticiasMasRecientes(cantidad);
 	}
 	
 	public void eliminar(Long id){
 		articuloDao.eliminar(id);
 	}
 	
-	public List<Articulo> todos(){
-		return articuloDao.listar();
+	public List<Articulo> todos(int tipoArticulo){
+		return articuloDao.listar(tipoArticulo);
 	}
 	
 	public List<Comentario> comentariosPorArticulo(Long articuloId){

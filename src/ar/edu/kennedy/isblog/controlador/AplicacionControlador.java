@@ -16,7 +16,7 @@ public class AplicacionControlador {
 	@RequestMapping("/")
     public String inicio(Model modelo) {
            
-            modelo.addAttribute("noticias", articuloServicio.masRecientes(4));
+            modelo.addAttribute("noticias", articuloServicio.noticiasMasRecientes(4));
             
             modelo.addAttribute("menuSeleccionado", "inicio");
             

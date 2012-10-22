@@ -28,25 +28,28 @@ public class ArticuloDao extends BaseDao<Articulo> implements IArticuloDao {
 	}
 	
 	@Override
-	public Articulo masReciente() {
+	public Articulo tipoMasReciente(int tipoArticulo) {
 		SimpleQuery query = new SimpleQuery(Articulo.class);
+		query.setFiltro("tipoArticulo == :tipoArticulo");
         query.setOrden("fechaPublicacion desc");
-        return primero(query);
+        return primero(query, tipoArticulo);
 	}
 
 	@Override
-	public List<Articulo> masRecientes(int cantidad) {
+	public List<Articulo> noticiasMasRecientes(int cantidad) {
 		SimpleQuery query = new SimpleQuery(Articulo.class);
+		query.setFiltro("tipoArticulo == :tipoArticulo");
 		query.setOrden("fechaPublicacion desc");
 		query.setRango(0, cantidad);
-        return listar(query);
+        return listar(query, Articulo.NOTICIA);
 	}
 	
 	@Override
-	public List<Articulo> listar() {
+	public List<Articulo> listar(int tipoArticulo) {
 		SimpleQuery query = new SimpleQuery(Articulo.class);
+		query.setFiltro("tipoArticulo == :tipoArticulo");
 		query.setOrden("fechaPublicacion desc");
-        return listar(query);
+        return listar(query, tipoArticulo);
 	}
 
 }

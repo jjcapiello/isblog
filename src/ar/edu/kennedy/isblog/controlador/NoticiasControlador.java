@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.kennedy.isblog.modelo.Articulo;
+import ar.edu.kennedy.isblog.modelo.Comentario;
 import ar.edu.kennedy.isblog.servicio.ArticulosServicio;
 
 
@@ -45,10 +46,30 @@ public class NoticiasControlador {
 		
 		modelo.addObject("comentarios", articuloServicio.comentariosPorArticulo(Long.valueOf(id)));
 		
+		modelo.addObject("comentario", new Comentario());
+		
         modelo.addObject("menuSeleccionado", "noticias");
         modelo.setViewName("noticias/ver");
 		
         return modelo;
+    }
+	
+	// Crea Comentario
+	@RequestMapping(value="/noticias/{id}/comentar", method=RequestMethod.POST)
+    public ModelAndView comentar(@PathVariable String id, @ModelAttribute Comentario comentario) {
+                         
+		log.info(String.format("Creando Comentario"));
+
+		Comentario nuevoComentario = new Comentario();
+		nuevoComentario.setArticuloId(Long.valueOf(id));
+		nuevoComentario.setFecha(Calendar.getInstance().getTime());
+		nuevoComentario.setTitulo(comentario.getTitulo());
+		nuevoComentario.setTexto(comentario.getTexto());
+		nuevoComentario.setAprobado(false);
+		
+		articuloServicio.guardarComentario(nuevoComentario);
+		
+        return new ModelAndView("redirect:/noticias/"+id);
     }
 	
 	/*Adminsitracion de Noticias*/

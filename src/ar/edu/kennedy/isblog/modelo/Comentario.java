@@ -22,10 +22,16 @@ public class Comentario {
 	private Date fecha;
 	
 	@Persistent
+	private String titulo;
+	
+	@Persistent
 	private String texto;
+	
+	@Persistent
+	private boolean aprobado;
 
 	public Comentario() {
-
+		
 	}
 	
 	public Comentario(Date fecha, String texto) {
@@ -64,6 +70,22 @@ public class Comentario {
 
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public boolean isAprobado() {
+		return aprobado;
+	}
+
+	public void setAprobado(boolean aprobado) {
+		this.aprobado = aprobado;
 	}
 	
 	

@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import ar.edu.kennedy.isblog.dao.SimpleQuery;
 import ar.edu.kennedy.isblog.dao.jdo.BaseDao;
-import ar.edu.kennedy.isblog.modelo.Articulo;
 import ar.edu.kennedy.isblog.modelo.Comentario;
-import ar.edu.kennedy.isblog.persistencia.IArticuloDao;
 import ar.edu.kennedy.isblog.persistencia.IComentarioDao;
 
 @Repository
@@ -31,8 +29,10 @@ public class ComentarioDao extends BaseDao<Comentario> implements IComentarioDao
 
 	@Override
 	public List<Comentario> comentariosPorArticulo(Long articuloId) {
-		// TODO Auto-generated method stub
-		return null;
+		SimpleQuery query = new SimpleQuery(Comentario.class);
+		query.setFiltro("articuloId == :articuloId");
+		query.setOrden("fecha desc");
+        return listar(query, articuloId);
 	}
 
 }

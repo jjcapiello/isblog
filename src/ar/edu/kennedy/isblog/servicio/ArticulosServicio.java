@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.edu.kennedy.isblog.dao.SimpleQuery;
 import ar.edu.kennedy.isblog.modelo.Articulo;
 import ar.edu.kennedy.isblog.modelo.Comentario;
 import ar.edu.kennedy.isblog.persistencia.IArticuloDao;
@@ -40,6 +41,13 @@ public class ArticulosServicio {
 	}
 	
 	public List<Comentario> comentariosPorArticulo(Long articuloId){
-		return comentarioDao.comentariosPorArticulo(articuloId);
+		SimpleQuery query = new SimpleQuery(Comentario.class);
+		query.setFiltro("articuloId == :articuloId && aprobado == true");
+		query.setOrden("fecha desc");
+        return comentarioDao.listar(query, articuloId);
+	}
+
+	public Comentario guardarComentario(Comentario nuevoComentario) {
+		return comentarioDao.guardar(nuevoComentario);
 	}
 }

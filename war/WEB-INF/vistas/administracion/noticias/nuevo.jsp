@@ -3,7 +3,7 @@
 <%@taglib uri="http://ckeditor.com" prefix="ckeditor" %>
 
 <div class="page-header">
-  <h1>Noticia</h1>
+  <h1>Nueva Noticia</h1>
 </div>
 
 <form:form modelAttribute="articulo" action="/administracion/noticias/crear" method="POST"

@@ -13,6 +13,7 @@
 		<c:set var="contador" value="${contador + 1 }" />
 		<c:choose>
 			<c:when test="${contador == 1}">
+			<!-- Primer Noticias -->
 				<div class="hero-unit">
 					<h1>
 						<c:out value="${noticia.titulo}" />
@@ -26,12 +27,13 @@
 							&raquo;</a>
 					</p>
 				</div>
-
+				<!-- Fin Primer Noticias -->
 				<c:if test="${fn:length(noticias) > 1}">
 					<div class="row">
 				</c:if>
 			</c:when>
 			<c:otherwise>
+				<!-- Otras Noticias -->
 				<div class="span4">
 					<h2>
 						<c:out value="${noticia.titulo}" />

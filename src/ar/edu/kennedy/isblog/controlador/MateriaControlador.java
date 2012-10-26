@@ -14,7 +14,13 @@ public class MateriaControlador {
             
             return "materia/listar";
     }
-	
+	@RequestMapping("/materia/programa")
+    public String programa(Model modelo) {
+            
+            modelo.addAttribute("btn", "/programa/prog");
+            
+            return "materia/programa/prog";
+    }
 	
 	
 }

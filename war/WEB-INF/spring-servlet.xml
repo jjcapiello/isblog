@@ -6,27 +6,16 @@
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
                         http://www.springframework.org/schema/mvc     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<!-- The configuration for your 'accounts' Dispatcher Servlet. This example 
-		uses component scanning to automatically pick up controllers. - Dependencies 
-		of controllers are wired using @Autowired support. - The URI scheme is controller 
-		using @RequestMapping annotations -->
-
+	<!-- Activar Anotaciones MVC -->
 	<mvc:annotation-driven />
 
 	<context:component-scan base-package="ar.edu.kennedy.isblog" />
 
-	<!-- if you would not have used component scanning you would have had to 
-		wire up the controller yourself: <bean class="accounts.web.AccountController"> 
-		<constructor-arg ref="accountManager"/> </bean> -->
-
-	<!-- This bean sets up the Velocity environment for us based on a root path 
-		for templates. Optionally, a properties file can be specified for more control 
-		over the Velocity environment, but the defaults are pretty sane for file 
-		based template loading. -->
+	<!-- Directorio de las Vistas -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/vistas/" />
 		<property name="suffix" value=".jsp" />
-	</bean>
+	</bean>	
 
 </beans>

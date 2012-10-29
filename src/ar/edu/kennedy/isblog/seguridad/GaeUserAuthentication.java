@@ -5,7 +5,7 @@ import java.util.HashSet;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
-import ar.edu.kennedy.isblog.modelo.GaeUser;
+import ar.edu.kennedy.isblog.modelo.Usuario;
 
 
 /**
@@ -14,11 +14,11 @@ import ar.edu.kennedy.isblog.modelo.GaeUser;
  * @author Luke Taylor
  */
 public class GaeUserAuthentication implements Authentication {
-    private final GaeUser principal;
+    private final Usuario principal;
     private final Object details;
     private boolean authenticated;
 
-    public GaeUserAuthentication(GaeUser principal, Object details) {
+    public GaeUserAuthentication(Usuario principal, Object details) {
         this.principal = principal;
         this.details = details;
         authenticated = true;

@@ -1,5 +1,5 @@
-html, body {
-    background-color: #fff;
+html,body {
+	background-color: #fff;
 }
 
 body {
@@ -7,17 +7,22 @@ body {
 	padding-bottom: 40px;
 }
 
-.container > footer p {
-    text-align: center;
+.container>footer p {
+	text-align: center;
 }
 
 .contenedor {
-    position: relative;
-    min-height: 500px;
+	position: relative;
+	min-height: 500px;
 }
 
 footer {
-  margin-top: 45px;
-  padding: 35px 0 36px;
-  border-top: 1px solid #e5e5e5;
+	margin-top: 45px;
+	padding: 35px 0 36px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.informacion {
+	padding-bottom: 5px;
+	margin-top: 5px;
 }

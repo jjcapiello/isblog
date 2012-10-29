@@ -4,8 +4,7 @@
 	class="icon-bar"></span> <span class="icon-bar"></span>
 </a>
 <a class="brand" href="/">
-<img src="recursos/bootstrap/img/logo_is.png" width="100" height="60" > 
-
+Investigación de Sistemas
 </a>
 <div class="nav-collapse collapse">
 	<ul class="nav">

@@ -10,8 +10,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.SpringSecurityMessageSource;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
 
-import ar.edu.kennedy.isblog.modelo.GaeUser;
-import ar.edu.kennedy.isblog.persistencia.UserRegistry;
+import ar.edu.kennedy.isblog.modelo.Usuario;
+import ar.edu.kennedy.isblog.persistencia.IUsuarioDao;
 
 import com.google.appengine.api.users.User;
 
@@ -19,7 +19,7 @@ public class GoogleAccountsAuthenticationProvider implements AuthenticationProvi
 
 	protected MessageSourceAccessor messages = SpringSecurityMessageSource.getAccessor();
 
-	private UserRegistry userRegistry;
+	private IUsuarioDao userRegistry;
 	
 	@Override
 	public Authentication authenticate(Authentication authentication)
@@ -27,7 +27,7 @@ public class GoogleAccountsAuthenticationProvider implements AuthenticationProvi
 		
 		User googleUser = (User) authentication.getPrincipal();
 		
-		GaeUser user = userRegistry.findUser(googleUser.getUserId());
+		Usuario user = userRegistry.findUser(googleUser.getUserId());
 
         if (user == null) {
             // El usuario debe registrarse

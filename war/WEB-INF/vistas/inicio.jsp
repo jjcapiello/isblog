@@ -2,6 +2,18 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/functions' prefix='fn'%>
 
+<div class="row informacion">
+<div class="span2">
+<img src="/recursos/bootstrap/img/logo_is.png" > 
+</div>
+<div class="span10">
+<h4>Sitio de articulos de la catedra de Investigación de Sistemas</h4>
+<h5>Universidad Argentina John F. Kennedy</h5> 
+
+</div>
+</div>
+
+<div class="row">
 <c:if test="${empty noticias}">
 	<p>No hay Noticias</p>
 </c:if>
@@ -54,3 +66,5 @@
 	</c:if>
 
 </c:if>
+
+</div>

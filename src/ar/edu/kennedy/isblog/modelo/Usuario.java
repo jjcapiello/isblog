@@ -1,18 +1,16 @@
 package ar.edu.kennedy.isblog.modelo;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.EnumSet;
 import java.util.Set;
 
+import javax.jdo.annotations.IdentityType;
+import javax.jdo.annotations.PersistenceCapable;
+
 import ar.edu.kennedy.isblog.seguridad.Rol;
 
-/**
- * Custom user object for the application.
- *
- * @author Luke Taylor
- */
-public class GaeUser implements Serializable {
+@PersistenceCapable(identityType = IdentityType.APPLICATION)
+public class Usuario {
     private final String userId;
     private final String email;
     private final String nickname;
@@ -26,7 +24,7 @@ public class GaeUser implements Serializable {
      *
      * Assigns the user the "NEW_USER" role only.
      */
-    public GaeUser(String userId, String nickname, String email) {
+    public Usuario(String userId, String nickname, String email) {
         this.userId = userId;
         this.nickname = nickname;
         this.authorities = EnumSet.of(Rol.USER);
@@ -39,7 +37,7 @@ public class GaeUser implements Serializable {
     /**
      * Post-registration constructor
      */
-    public GaeUser(String userId, String nickname, String email, String forename, String surname, Set<Rol> authorities, boolean enabled) {
+    public Usuario(String userId, String nickname, String email, String forename, String surname, Set<Rol> authorities, boolean enabled) {
         this.userId = userId;
         this.nickname = nickname;
         this.email = email;

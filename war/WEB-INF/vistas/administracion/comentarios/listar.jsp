@@ -15,6 +15,7 @@
 			<tr>
 				<th>Titulo</th>
 				<th>Fecha</th>
+				<th>Aprobado</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -23,6 +24,7 @@
 				<tr>
 					<td><a href="/administracion/comentarios/${comentario.id}"><c:out value="${comentario.titulo}" /></td>
 					<td><c:out value="${comentario.fecha}" /></td>
+					<td><c:out value="${comentario.aprobado}" /></td>
 					<td></td>
 				</tr>
 			</c:forEach>

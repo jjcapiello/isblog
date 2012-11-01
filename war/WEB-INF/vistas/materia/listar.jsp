@@ -24,7 +24,7 @@ La idea es que los alumnos que cursen esta materia en años posteriores sigan tr
 
 <div class="row">
 	<div class="span4">
-	<h2 align="center" > PROGRAMA </h2>
+	<h2 align="center" > Programa </h2>
 		<p align="center"> <img src="recursos/bootstrap/img/icons/programa.png" /></p>
 		
 		<p align="center">
@@ -32,7 +32,7 @@ La idea es que los alumnos que cursen esta materia en años posteriores sigan tr
 		</p>
 	</div>
 	<div class="span4">
-		<h2 align="center">BIBLIOGRAFIA</h2>
+		<h2 align="center">Bibliografia</h2>
 		<p align="center"><img src="recursos/bootstrap/img/icons/biblio.png" /> </p>
 		
 		<p align="center">
@@ -40,7 +40,7 @@ La idea es que los alumnos que cursen esta materia en años posteriores sigan tr
 		</p>
 	</div>
 	<div class="span4">
-	<h2 align="center">INFORMACION</h2>
+	<h2 align="center">Informacion</h2>
 		<p align="center" ><img src="recursos/bootstrap/img/icons/info.png"  /></p>
 		<p align="center">
 			<a class="btn btn-success btn-large" href="#myPrograma" data-toggle="modal" >Consultar</a>

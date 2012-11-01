@@ -7,8 +7,9 @@
 <img src="/recursos/bootstrap/img/logo_is.png" > 
 </div>
 <div class="span10">
-<h4>Sitio de articulos de la catedra de Investigación de Sistemas</h4>
-<h5>Universidad Argentina John F. Kennedy</h5> 
+
+<h4 align="center">Sitio de articulos de la catedra de Investigación de Sistemas</h4>
+<h5 align="center">Universidad Argentina John F. Kennedy</h5> 
 
 </div>
 </div>
@@ -27,15 +28,20 @@
 			<c:when test="${contador == 1}">
 			<!-- Primer Noticias -->
 				<div class="hero-unit">
-					<h1>
-						<c:out value="${noticia.titulo}" />
+					
+					<h1 >
+						<i><c:out value="${noticia.titulo}" /></i>
 					</h1>
+					
+					<h6>
 					<c:out value="${noticia.fechaPublicacion}" />
-					<p>
+					</h6>
+					<p align="center">
 						<c:out value="${noticia.subtitulo}" />
+						<hr>
 					</p>
-					<p>
-						<a class="btn btn-primary btn-large" href="/noticias/${noticia.id}">Ver Completo
+					<p align="center">
+						<a class="btn btn-primary btn-large" href="/noticias/${noticia.id}">Leer
 							&raquo;</a>
 					</p>
 				</div>
@@ -50,12 +56,16 @@
 					<h2>
 						<c:out value="${noticia.titulo}" />
 					</h2>
+					<h6 align="right">
+					
 					<c:out value="${noticia.fechaPublicacion}" />
+					</h6>
 					<p>
 						<c:out value="${noticia.subtitulo}" />
+						<hr>
 					</p>
-					<p>
-						<a class="btn" href="/noticias/${noticia.id}">Ver Completo &raquo;</a>
+					<p align="center">
+						<a class="btn btn-primary btn-large" href="/noticias/${noticia.id}">Leer &raquo;</a>
 					</p>
 				</div>
 			</c:otherwise>

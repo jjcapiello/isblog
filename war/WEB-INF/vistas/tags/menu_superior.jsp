@@ -12,16 +12,16 @@
 
 
 		<li <c:if test='${menuSeleccionado == "inicio"}'>class="active"</c:if>><a
-			href="<c:url value="/" />">Inicio</a></li>
+			href="<c:url value="/" />" rel="tooltip" title="Volver al inicio">Inicio</a></li>
 		<li
 			<c:if test='${menuSeleccionado == "noticias"}'>class="active"</c:if>><a
-			href="<c:url value="/noticias" />">Noticias</a></li>
+			href="<c:url value="/noticias" />"  rel="tooltip" title="Todas las noticias ordenadas">Noticias </a></li>
 		<li
 			<c:if test='${menuSeleccionado == "materia"}'>class="active"</c:if>><a
-			href="<c:url value="/materia" />">Materia</a></li>
+			href="<c:url value="/materia" />" rel="tooltip" title="Datos relacionados a la materia" >Materia</a></li>
 		<li
 			<c:if test='${menuSeleccionado == "contacto"}'>class="active"</c:if>><a
-			href="<c:url value="/contacto" />">Contacto</a></li>
+			href="<c:url value="/contacto" />" rel="tooltip" title="Formulario de contacto">Contacto</a></li>
 
 	</ul>
 	<sec:authorize access="hasRole('ADMIN')">

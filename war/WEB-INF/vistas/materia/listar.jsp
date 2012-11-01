@@ -42,9 +42,8 @@ La idea es que los alumnos que cursen esta materia en años posteriores sigan tr
 	<div class="span4">
 	<h2 align="center">INFORMACION</h2>
 		<p align="center" ><img src="recursos/bootstrap/img/icons/info.png"  /></p>
-		
 		<p align="center">
-			<a class="btn btn-success btn-large" href="#myPrograma" data-toggle="modal">Consultar</a>
+			<a class="btn btn-success btn-large" href="#myPrograma" data-toggle="modal" >Consultar</a>
 		</p>
 	</div>
 </div>

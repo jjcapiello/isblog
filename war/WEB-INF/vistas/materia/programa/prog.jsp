@@ -1,8 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2">
       <h4>INVESTIGACIÓN EN SISTEMAS </h2>
-	  <p><b>Código: 32 – 502 </b></p>
+	  <p><b>Código: 32 ? 502 </b></p>
 	  <p><b>Escuela de Sistemas </b></p>
 	<p><b>2008 </b></p>
 
@@ -63,10 +65,55 @@ Esta estrategia apunta a tres objetivos:
 - la de exponerlos en forma suscinta y clara; 
 - y la de tener un conocimiento detallado de un tema específico y uno más general de todos los 
 demás temas desarrollados. 
-
 </i></p>
 
 
+<p>
+<h2 align="center">PROGRAMA SINTETICO</h2>
+<hr>
+		<p><i>		Unidad I: Presentación de la materia. </i></p>
+		<p><i>		Unidad II: Búsqueda y selección de información. </i></p>
+		<p><i>		Unidad III: Definición de los alcances y límites del proyecto. </i></p>
+		<p><i>		Unidad IV: Planificación del proyecto. </i></p>
+		<p><i>		Unidad V y VI: Preparación y realización del proyecto. </i></p>
+		<p><i>		Unidad VII: Evaluación grupal e individual. </i></p>
+ </p>
+
+<p>
+<h2 align="center">PROGRAMA ANALITICO</h2>
+<hr>
+		<p><i>		Unidad I.-</i></p>
+		<p><i>				Presentación de la materia. 
+							Presentación del Objetivo de la Materia. 
+							Constitución de grupos de 4-6 alumnos. 
+							Selección de temas por grupo. . </i></p>
+
+		<p><i>		Unidad II</i></p>
+		<p><i>		Búsqueda y selección de información. 
+					Búsqueda y selección de información, en bibliotecas y proveedores. Análisis y evaluación del 
+					material obtenido. 
+					Investigación y recopilación de material adicional. </i></p>
+ 
+		<p><i>		Unidad III</i></p>
+		<p><i>		Definición de los alcances y límites del proyecto. 
+					Definición de los alcances y límites del proyecto. 
+					Preparación de índices de la presentación y de la carpeta del proyecto. 
+					Estructuración de la presentación y de la carpeta. </i></p>
+ 
+		<p><i>		Unidad IV</i></p>
+		<p><i>		Planificación del proyecto. 
+					Planificación del Proyecto. Distribución de responsabilidades, asignación de recursos y 
+					determinación de las fechas.  </i></p>
+		<p><i>		Unidad V</i></p>
+		<p><i>		Preparación y realización del proyecto. 3
+Preparación y realización de la presentación por parte de cada grupo.  </i></p>
+		<p><i>		Unidad VI</i></p>
+		<p><i>		Preparación y realización del proyecto. 
+Preparación, realización y entrega de la carpeta del Proyecto.   </i></p>
+		<p><i>		Unidad VII</i></p>
+		<p><i>		Evaluación grupal e individual. 
+Evaluación final, grupal e individual. </i></p>
+ </p>
 
 
 

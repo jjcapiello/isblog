@@ -8,14 +8,14 @@
 
 <div id="myPrograma" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-<h3 id="myModalLabel"><h2><i>Informacíon</i><h2></h3>
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+<h3 id="myModalLabel"><h2><i>InformacÃ­on</i><h2></h3>
 </div>
 
 <div class="modal-body">
-<p>	Los alumnos de quinto año del 2012 se encuentran desarrollando el portal de noticias de la facultad de sistemas.
-Si bien en el portal de la universidad existe una sección de noticias de la carrera de sistemas, surgió la necesidad de un espacio más específico, donde encontrar material informativo sobre la materia, poder hacer comentarios sobre las noticias publicadas, y poder publicar mensajes informativos a los alumnos que estén cursando la materia.
-La idea es que los alumnos que cursen esta materia en años posteriores sigan trabajando en este desarrollo agregándole funcionalidad adicional.</p>
+<p>	Los alumnos de quinto aÃ±o del 2012 se encuentran desarrollando el portal de noticias de la facultad de sistemas.
+Si bien en el portal de la universidad existe una secciÃ³n de noticias de la carrera de sistemas, surgiÃ³ la necesidad de un espacio mÃ¡s especÃ­fico, donde encontrar material informativo sobre la materia, poder hacer comentarios sobre las noticias publicadas, y poder publicar mensajes informativos a los alumnos que estÃ©n cursando la materia.
+La idea es que los alumnos que cursen esta materia en aÃ±os posteriores sigan trabajando en este desarrollo agregÃ¡ndole funcionalidad adicional.</p>
 </div>
 <div class="modal-footer">
 <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Volver</button>
@@ -51,29 +51,29 @@ La idea es que los alumnos que cursen esta materia en años posteriores sigan tra
 
 <div id="myBibliografia" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
 <h3 id="myModalLabel"><h2><i>Bibliografia</i><h2></h3>
 </div>
 
 <div class="modal-body">
 <p>	<b>
-• </b> HERNANDEZ SAMPIERI, Roberto-FERNANDEZ COLLADO, Carlos – BAPTISTA 
-LUCIO, Pilar: Metodología de la Investigación. McGraw Hill, México, 2000 
+â€¢ </b> HERNANDEZ SAMPIERI, Roberto-FERNANDEZ COLLADO, Carlos â€“ BAPTISTA 
+LUCIO, Pilar: MetodologÃ­a de la InvestigaciÃ³n. McGraw Hill, MÃ©xico, 2000 
 </p>
 <p><b>
-• </b>SIERRA BRAVO, Restituto: Tesis doctorales y trabajos de investigación científica. 
-ITP, España, 2000 
+â€¢ </b>SIERRA BRAVO, Restituto: Tesis doctorales y trabajos de investigaciÃ³n cientÃ­fica. 
+ITP, EspaÃ±a, 2000 
 </p>
 <p><b>
-• </b>DARAHUGE, M.E. y ARELLANO, L.E.: Lógica aplicada a la Investigación. Editorial 
+â€¢ </b>DARAHUGE, M.E. y ARELLANO, L.E.: LÃ³gica aplicada a la InvestigaciÃ³n. Editorial 
 GEEAR, Buenos Aires, 2001 (ISBN 987-9748-03-06) 
 </p>
 <p><b>
-• </b>PEREZ LALANNE, Roberto :   El proceso de investigación social.  Universidad 
+â€¢ </b>PEREZ LALANNE, Roberto :   El proceso de investigaciÃ³n social.  Universidad 
 Argentina John F. Kennedy, Buenos Aires, 1996 
 </p>
 <p><b>
-• </b>PEREZ LALANNE, Roberto :  Los tipos de investigación y sus diseños.  Universidad 
+â€¢ </b>PEREZ LALANNE, Roberto :  Los tipos de investigaciÃ³n y sus diseÃ±os.  Universidad 
 Nacional de Lomas de Zamora, Buenos Aires,  2000.
 </p>
 </div>

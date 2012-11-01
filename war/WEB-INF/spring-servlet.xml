@@ -10,7 +10,7 @@
 	<mvc:annotation-driven />
 
 	<context:component-scan base-package="ar.edu.kennedy.isblog" />
-
+    
 	<!-- Directorio de las Vistas -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

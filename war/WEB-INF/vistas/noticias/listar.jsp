@@ -11,25 +11,27 @@
 
 <c:if test="${not empty noticias}">
 
-    <c:forEach var="noticia" items="${noticias}">
-    	
-    	<div class="row">
-    		<div class="span1">  
-    			<img src="http://placehold.it/200x200" class="img-polaroid">
-    		</div>
-    		<div >  
-             <h1 align="center" ><c:out value="${noticia.titulo}" /></h1>
-             <h4> <c:out value="${noticia.fechaPublicacion}" />   </h4>
-             <p><c:out value="${noticia.subtitulo}" /></p>
-             </div>
-            
-             <p align="center" >
-                 <a class="btn btn-primary btn-large" href="/noticias/${noticia.id}">Leer &raquo;</a>
-             </p>
-              <hr>
-              </div>
-         
-            
-    </c:forEach>
+
+<div class="row">
+<c:forEach var="noticia" items="${noticias}">
+
+	<div class="span12">
+			 <div class="thumbnail" >
+					<h3 align="center"><c:out value="${noticia.titulo}" /></h3>
+		
+					<img src="recursos/bootstrap/img/diario.png" widht=100 height=100 class="img-polaroid">
+								
+						<p  class=><c:out value="${noticia.subtitulo}" /></p>
+							<p align="center" >
+								<a class="btn btn-primary btn-large" href="/noticias/${noticia.id}">Leer &raquo;</a>
+						</p> 
+						 <h5 align="right"> <c:out value="${noticia.fechaPublicacion}" />   </h5><hr>
+						
+			</div>
+		
+	</div></c:forEach>
+</div>
+
+
     
 </c:if>

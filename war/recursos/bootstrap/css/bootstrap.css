@@ -215,9 +215,10 @@ a:hover {
 }
 
 [class*="span"] {
-  float: left;
-  min-height: 1px;
-  margin-left: 20px;
+min-height: 1px; // prevent collapsing columns
+  .box-sizing(border-box);
+  margin-left: @gridGutterWidth;
+  padding-right: @gridGutterWidth;
 }
 
 .container,

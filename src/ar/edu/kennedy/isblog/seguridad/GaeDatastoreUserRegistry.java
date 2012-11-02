@@ -9,29 +9,24 @@ import com.google.appengine.api.datastore.KeyFactory;
 import java.util.*;
 import java.util.logging.Logger;
 
-/**
- * UserRegistry implementation which uses GAE's low-level Datastore APIs.
- *
- * @author Luke Taylor
- */
 public class GaeDatastoreUserRegistry implements UserRegistry {
 	private final Logger logger = Logger.getLogger(getClass().toString());
 
-    private static final String USER_TYPE = "GaeUser";
-    private static final String USER_NOMBRE = "nombre";
-    private static final String USER_NICKNAME = "nickname";
-    private static final String USER_EMAIL = "email";
-    private static final String USER_ENABLED = "enabled";
-    private static final String USER_AUTHORITIES = "authorities";
+    private static final String USUARIO_TIPO = "GaeUser";
+    private static final String USUARIO_NOMBRE = "nombre";
+    private static final String USUARIO_NICKNAME = "nickname";
+    private static final String USUARIO_EMAIL = "email";
+    private static final String USUARIO_ENABLED = "enabled";
+    private static final String USUARIO_AUTHORITIES = "authorities";
 
     public GaeUser findUser(String userId) {
-        Key key = KeyFactory.createKey(USER_TYPE, userId);
+        Key key = KeyFactory.createKey(USUARIO_TIPO, userId);
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
         try {
             Entity user = datastore.get(key);
 
-            long binaryAuthorities = (Long)user.getProperty(USER_AUTHORITIES);
+            long binaryAuthorities = (Long)user.getProperty(USUARIO_AUTHORITIES);
             Set<AppRole> roles = EnumSet.noneOf(AppRole.class);
 
             for (AppRole r : AppRole.values()) {
@@ -42,29 +37,29 @@ public class GaeDatastoreUserRegistry implements UserRegistry {
 
             GaeUser gaeUser = new GaeUser(
                     user.getKey().getName(),
-                    (String)user.getProperty(USER_NICKNAME),
-                    (String)user.getProperty(USER_EMAIL),
-                    (String)user.getProperty(USER_NOMBRE),
+                    (String)user.getProperty(USUARIO_NICKNAME),
+                    (String)user.getProperty(USUARIO_EMAIL),
+                    (String)user.getProperty(USUARIO_NOMBRE),
                     roles,
-                    (Boolean)user.getProperty(USER_ENABLED));
+                    (Boolean)user.getProperty(USUARIO_ENABLED));
 
             return gaeUser;
 
         } catch (EntityNotFoundException e) {
-            logger.info(userId + " not found in datastore");
+            logger.info(userId + " no se encuentra en la base de datos");
             return null;
         }
     }
 
     public void registerUser(GaeUser newUser) {
-        logger.info("Attempting to create new user " + newUser);
+        logger.info("Creando usuario " + newUser);
 
-        Key key = KeyFactory.createKey(USER_TYPE, newUser.getUserId());
+        Key key = KeyFactory.createKey(USUARIO_TIPO, newUser.getUserId());
         Entity user = new Entity(key);
-        user.setProperty(USER_EMAIL, newUser.getEmail());
-        user.setProperty(USER_NICKNAME, newUser.getNickname());
-        user.setProperty(USER_NOMBRE, newUser.getNombre());
-        user.setUnindexedProperty(USER_ENABLED, newUser.isEnabled());
+        user.setProperty(USUARIO_EMAIL, newUser.getEmail());
+        user.setProperty(USUARIO_NICKNAME, newUser.getNickname());
+        user.setProperty(USUARIO_NOMBRE, newUser.getNombre());
+        user.setUnindexedProperty(USUARIO_ENABLED, newUser.isHabilitado());
 
         Collection<AppRole> roles = newUser.getAuthorities();
 
@@ -74,7 +69,7 @@ public class GaeDatastoreUserRegistry implements UserRegistry {
             binaryAuthorities |= 1 << r.getBit();
         }
 
-        user.setUnindexedProperty(USER_AUTHORITIES, binaryAuthorities);
+        user.setUnindexedProperty(USUARIO_AUTHORITIES, binaryAuthorities);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(user);
@@ -82,7 +77,7 @@ public class GaeDatastoreUserRegistry implements UserRegistry {
 
     public void removeUser(String userId) {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-        Key key = KeyFactory.createKey(USER_TYPE, userId);
+        Key key = KeyFactory.createKey(USUARIO_TIPO, userId);
 
         datastore.delete(key);
     }

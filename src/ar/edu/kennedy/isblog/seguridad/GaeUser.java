@@ -10,8 +10,11 @@ public class GaeUser implements Serializable {
     private final String email;
     private final String nickname;
     private final String nombre;
+    
+    // Roles 
     private final Set<AppRole> authorities;
-    private final boolean enabled;
+    
+    private final boolean habilitado;
 
     /**
      * Pre-registration 
@@ -19,10 +22,10 @@ public class GaeUser implements Serializable {
     public GaeUser(String userId, String nickname, String email) {
         this.userId = userId;
         this.nickname = nickname;
-        this.authorities = EnumSet.of(AppRole.NEW_USER);
+        this.authorities = EnumSet.of(AppRole.NUEVO_USER);
         this.nombre = null;
         this.email = email;
-        this.enabled = true;
+        this.habilitado = true;
     }
 
     /**
@@ -34,7 +37,7 @@ public class GaeUser implements Serializable {
         this.email = email;
         this.authorities = authorities;
         this.nombre = nombre;
-        this.enabled= enabled;
+        this.habilitado= enabled;
     }
 
     public String getUserId() {
@@ -54,8 +57,8 @@ public class GaeUser implements Serializable {
     }
 
 
-    public boolean isEnabled() {
-        return enabled;
+    public boolean isHabilitado() {
+        return habilitado;
     }
 
     public Collection<AppRole> getAuthorities() {

@@ -26,11 +26,8 @@ import org.springframework.security.web.authentication.preauth.PreAuthenticatedA
 import org.springframework.util.Assert;
 import org.springframework.web.filter.GenericFilterBean;
 
-/**
- * @author Luke Taylor
- */
 public class GaeAuthenticationFilter extends GenericFilterBean {
-    private static final String REGISTRATION_URL = "/registrar";
+    private static final String URL_REGISTRACION = "/registrar";
 
     private final Logger logger = Logger.getLogger(getClass().toString());
 
@@ -50,9 +47,9 @@ public class GaeAuthenticationFilter extends GenericFilterBean {
 
         if (authentication == null) {
             if (googleUser != null) {
-                logger.info("Currently logged on to GAE as user " + googleUser);
-                logger.info("Authenticating to Spring Security");
-                // User has returned after authenticating via GAE. Need to authenticate through Spring Security.
+                logger.info("Actualmente loguado en GAE como " + googleUser);
+                logger.info("Autenticando en Spring Security");
+                // Usuario retornado despues de autenticar con GAE. Necesario para validar con Spring Security.
                 PreAuthenticatedAuthenticationToken token = new PreAuthenticatedAuthenticationToken(googleUser, null);
                 token.setDetails(ads.buildDetails((HttpServletRequest) request));
 
@@ -60,9 +57,9 @@ public class GaeAuthenticationFilter extends GenericFilterBean {
                     authentication = authenticationManager.authenticate(token);
                     SecurityContextHolder.getContext().setAuthentication(authentication);
 
-                    if (authentication.getAuthorities().contains(AppRole.NEW_USER)) {
-                        logger.info("New user authenticated. Redirecting to registration page");
-                        ((HttpServletResponse) response).sendRedirect(REGISTRATION_URL);
+                    if (authentication.getAuthorities().contains(AppRole.NUEVO_USER)) {
+                        logger.info("Nuevo usuario autenticado. Redirigiendo a la pagina de registracion.");
+                        ((HttpServletResponse) response).sendRedirect(URL_REGISTRACION);
 
                         return;
                     }
@@ -82,7 +79,7 @@ public class GaeAuthenticationFilter extends GenericFilterBean {
         assert authentication != null;
 
         if (googleUser == null) {
-            // User has logged out of GAE but is still logged into application
+            // Si el usuario se deslogueo de GAE pero no de la aplicacion
             return false;
         }
 
@@ -98,7 +95,7 @@ public class GaeAuthenticationFilter extends GenericFilterBean {
 
     @Override
     public void afterPropertiesSet() throws ServletException {
-        Assert.notNull(authenticationManager, "AuthenticationManager must be set");
+        Assert.notNull(authenticationManager, "AuthenticationManager debe setearse");
     }
 
     public void setAuthenticationManager(AuthenticationManager authenticationManager) {

@@ -1,4 +1,5 @@
 package ar.edu.kennedy.isblog.seguridad;
+
 import com.google.appengine.api.users.User;
 import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceAware;
@@ -10,19 +11,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.SpringSecurityMessageSource;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
 
-
-/**
- * A simple authentication provider which interacts with {@code User} returned by the GAE {@code UserService},
- * and also the local persistent {@code UserRegistry} to build an application user principal.
- * <p>
- * If the user has been authenticated through google accounts, it will check if they are already registered
- * and either load the existing user information or assign them a temporary identity with limited access until they
- * have registered.
- * <p>
- * If the account has been disabled, a {@code DisabledException} will be raised.
- *
- * @author Luke Taylor
- */
 public class GoogleAccountsAuthenticationProvider implements AuthenticationProvider, MessageSourceAware {
     protected MessageSourceAccessor messages = SpringSecurityMessageSource.getAccessor();
 
@@ -34,20 +22,17 @@ public class GoogleAccountsAuthenticationProvider implements AuthenticationProvi
         GaeUser user = userRegistry.findUser(googleUser.getUserId());
 
         if (user == null) {
-            // User not in registry. Needs to register
+            // Usuario no registredo. Debe registrarse
             user = new GaeUser(googleUser.getUserId(), googleUser.getNickname(), googleUser.getEmail());
         }
 
-        if (!user.isEnabled()) {
-            throw new DisabledException("Account is disabled");
+        if (!user.isHabilitado()) {
+            throw new DisabledException("Cuenta deshabilitada");
         }
 
         return new GaeUserAuthentication(user, authentication.getDetails());
     }
 
-    /**
-     * Indicate that this provider only supports PreAuthenticatedAuthenticationToken (sub)classes.
-     */
     public final boolean supports(Class<?> authentication) {
         return PreAuthenticatedAuthenticationToken.class.isAssignableFrom(authentication);
     }

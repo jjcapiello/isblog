@@ -1,15 +1,11 @@
 package ar.edu.kennedy.isblog.seguridad;
+
 import java.util.Collection;
 import java.util.HashSet;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
-/**
- * Authentication object representing a fully-authenticated user.
- *
- * @author Luke Taylor
- */
 public class GaeUserAuthentication implements Authentication {
     private final GaeUser principal;
     private final Object details;

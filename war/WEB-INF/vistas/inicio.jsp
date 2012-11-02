@@ -52,7 +52,7 @@
 			</c:when>
 			<c:otherwise>
 				<!-- Otras Noticias -->
-				<div class="span4">
+					<div class="span4">
 					<h2>
 						<c:out value="${noticia.titulo}" />
 					</h2>
@@ -68,6 +68,7 @@
 						<a class="btn btn-primary btn-large" href="/noticias/${noticia.id}">Leer &raquo;</a>
 					</p>
 				</div>
+				
 			</c:otherwise>
 		</c:choose>
 	</c:forEach>

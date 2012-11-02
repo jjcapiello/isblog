@@ -1,15 +1,14 @@
-<!-- Indices written at Thu, 1 Nov 2012 23:30:02 ART -->
+<!-- Indices written at Fri, 2 Nov 2012 16:19:25 UTC -->
 
 <datastore-indexes>
 
-<!-- Used 9 times in query history -->
-
+    <!-- Used 16 times in query history -->
     <datastore-index kind="Articulo" ancestor="false" source="auto">
         <property name="tipoArticulo" direction="asc"/>
         <property name="fechaPublicacion" direction="desc"/>
     </datastore-index>
 
-    <!-- Used 3 times in query history -->
+    <!-- Used 1 time in query history -->
     <datastore-index kind="Comentario" ancestor="false" source="auto">
         <property name="aprobado" direction="asc"/>
         <property name="articuloId" direction="asc"/>

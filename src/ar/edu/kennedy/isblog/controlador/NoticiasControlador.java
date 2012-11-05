@@ -4,6 +4,9 @@ import java.util.Calendar;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.kennedy.isblog.modelo.Articulo;
 import ar.edu.kennedy.isblog.modelo.Comentario;
+import ar.edu.kennedy.isblog.seguridad.GaeUser;
+import ar.edu.kennedy.isblog.seguridad.GaeUserAuthentication;
 import ar.edu.kennedy.isblog.servicio.ArticulosServicio;
 
 
@@ -55,6 +60,7 @@ public class NoticiasControlador {
     }
 	
 	// Crea Comentario
+	@PreAuthorize("hasAnyRole('ADMIN,USER')")
 	@RequestMapping(value="/noticias/{id}/comentar", method=RequestMethod.POST)
     public ModelAndView comentar(@PathVariable String id, @ModelAttribute Comentario comentario) {
                          
@@ -63,9 +69,14 @@ public class NoticiasControlador {
 		Comentario nuevoComentario = new Comentario();
 		nuevoComentario.setArticuloId(Long.valueOf(id));
 		nuevoComentario.setFecha(Calendar.getInstance().getTime());
+		
 		nuevoComentario.setTitulo(comentario.getTitulo());
 		nuevoComentario.setTexto(comentario.getTexto());
 		nuevoComentario.setAprobado(false);
+		
+		Authentication auth = (GaeUserAuthentication) SecurityContextHolder.getContext().getAuthentication();
+	    nuevoComentario.setEmailUsuario(((GaeUser)auth.getPrincipal()).getEmail());
+	    nuevoComentario.setNombre(((GaeUser)auth.getPrincipal()).getNombre());
 		
 		articuloServicio.guardarComentario(nuevoComentario);
 		

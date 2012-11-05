@@ -28,7 +28,7 @@ La idea es que los alumnos que cursen esta materia en años posteriores sigan tr
 		<p align="center"> <img src="recursos/bootstrap/img/icons/programa.png" /></p>
 		
 		<p align="center">
-			<a href="materia/programa" role="button" class="btn btn-success btn-large" >Programa</a>
+			<a href="materia/programa" role="button" class="btn btn-success btn-large" >Programa de la Materia</a>
 		</p>
 	</div>
 	<div class="span4">

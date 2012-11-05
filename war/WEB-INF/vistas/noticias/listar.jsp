@@ -19,7 +19,7 @@
 			 <div class="thumbnail" >
 					<h3 align="center"><c:out value="${noticia.titulo}" /></h3>
 		
-					<img src="recursos/bootstrap/img/diario.png" widht=100 height=100 class="img-polaroid">
+					<img src="http://placehold.it/140x140" class="img-polaroid">
 								
 						<p  class=><c:out value="${noticia.subtitulo}" /></p>
 							<p align="center" >

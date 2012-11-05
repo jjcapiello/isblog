@@ -11,7 +11,7 @@
     <input type="submit" value="Aprobar">
 </form>
 
-<form action="/administracion/comentarios/${comentario.id}" method="DELETE" >
+<form action="/administracion/comentarios/${comentario.id}/eliminar" method="POST" >
 	<input type="submit" value="Eliminar">
 </form>
 

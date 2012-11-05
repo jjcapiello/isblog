@@ -51,7 +51,7 @@ public class ComentarioControlador {
         return new ModelAndView("redirect:/administracion/comentarios");
     }
 	
-	@RequestMapping(value="/administracion/comentarios/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/administracion/comentarios/{id}/eliminar", method=RequestMethod.POST)
     public ModelAndView eliminar(@PathVariable String id) {
                          	
 		comentarioServicio.eliminar(Long.valueOf(id));

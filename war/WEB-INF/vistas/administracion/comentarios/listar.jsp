@@ -13,19 +13,31 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
+				<th>Usuario</th>
 				<th>Titulo</th>
 				<th>Fecha</th>
-				<th>Aprobado</th>
+				<th></th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="comentario" items="${comentarios}">
 				<tr>
+					<td><c:out value="${comentario.emailUsuario}" /></td>
 					<td><a href="/administracion/comentarios/${comentario.id}"><c:out value="${comentario.titulo}" /></td>
 					<td><c:out value="${comentario.fecha}" /></td>
-					<td><c:out value="${comentario.aprobado}" /></td>
-					<td></td>
+					<td>
+					<c:if test="${comentario.aprobado == false}">
+						<form action="/administracion/comentarios/${comentario.id}/aprobar" method="POST" >
+						    <input type="submit" value="Aprobar" class="btn btn-success">
+						</form>
+					</c:if>
+					</td>
+					<td>
+					<form action="/administracion/comentarios/${comentario.id}/eliminar" method="POST" >
+						<input type="submit" value="Eliminar" class="btn btn-danger">
+					</form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

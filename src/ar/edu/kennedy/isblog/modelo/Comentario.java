@@ -19,6 +19,12 @@ public class Comentario {
     private Long articuloId;
 	
 	@Persistent
+    private String emailUsuario;
+	
+	@Persistent
+	private String nombre; 
+	
+	@Persistent
 	private Date fecha;
 	
 	@Persistent
@@ -54,6 +60,23 @@ public class Comentario {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
+	}
+
+	
+	public String getEmailUsuario() {
+		return emailUsuario;
+	}
+
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public Long getArticuloId() {

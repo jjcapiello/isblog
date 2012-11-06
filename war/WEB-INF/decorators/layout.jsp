@@ -41,5 +41,7 @@
 		src="/recursos/jquery/jquery-1.8.1.min.js"></script>
 	<script type="text/javascript"
 		src="/recursos/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="/recursos/bootstrap/js/bootbox.min.js"></script>
 </body>
 </html>

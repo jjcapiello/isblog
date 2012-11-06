@@ -1,6 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<script>
+        $(function() {
+           
+
+            $("a.confirm").click(function(e) {
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function(confirmed) {
+                    console.log("Confirmed: "+confirmed);
+                });
+            });
+
+        });
+    </script>
+    
 <div class="page-header">
   <h1>Listado de Comentarios</h1>
 </div>

@@ -106,6 +106,7 @@ public class AplicacionControlador {
         String loginUrl = UserServiceFactory.getUserService().createLoginURL("/");
 
         response.sendRedirect(loginUrl);
+        
     }
 	
 	@RequestMapping(value = "/logout", method= RequestMethod.GET)

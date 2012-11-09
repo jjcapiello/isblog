@@ -26,3 +26,16 @@ footer {
 	padding-bottom: 5px;
 	margin-top: 5px;
 }
+
+.media {
+	padding-top: 10px;
+}
+
+.media-body {
+	padding-right: 10px;
+}
+}
+/*
+.conbordes {
+	border-collapse: separate;
+} */

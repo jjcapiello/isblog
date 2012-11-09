@@ -33,7 +33,6 @@
 			</a>
 				<ul class="dropdown-menu">
 					<li><a href="/administracion/noticias">Noticias</a></li>
-					<li><a href="#">Materia</a></li>
 					<li><a href="/administracion/comentarios">Comentarios</a></li>
 				</ul></li>
 		</ul>

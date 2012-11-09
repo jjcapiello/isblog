@@ -1,12 +1,19 @@
 package ar.edu.kennedy.isblog.controlador;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.appengine.api.search.query.QueryParser.primitive_return;
+
+import ar.edu.kennedy.isblog.modelo.Comentario;
 import ar.edu.kennedy.isblog.servicio.ComentarioServicio;
 
 @Controller
@@ -30,6 +37,7 @@ public class ComentarioControlador {
         return modelo;
     }
 	
+	
 	@RequestMapping(value="/administracion/comentarios/{id}", method=RequestMethod.GET)
     public ModelAndView ver(@PathVariable String id) {
                          
@@ -50,6 +58,7 @@ public class ComentarioControlador {
 		
         return new ModelAndView("redirect:/administracion/comentarios");
     }
+	
 	
 	@RequestMapping(value="/administracion/comentarios/{id}/eliminar", method=RequestMethod.POST)
     public ModelAndView eliminar(@PathVariable String id) {
